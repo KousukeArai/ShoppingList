@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">お買い物メモ</string>
     <string name="title_shoppingList">お買い物リスト</string>
     <string name="title_db">一覧</string>
 </resources>

@@ -63,53 +63,53 @@ public class MainActivity extends AppCompatActivity {
         map.put("check", false);
         list.add(map);
 
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
+//
+//        map = new HashMap<>();
+//        map.put("name", "りんご");
+//        map.put("unit", "個");
+//        map.put("check", false);
+//        list.add(map);
 
         map = new HashMap<>();
         map.put("name", "たまねぎ");

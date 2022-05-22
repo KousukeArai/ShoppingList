@@ -51,8 +51,6 @@ public class HomeFragment extends Fragment {
                 list, R.layout.list, FROM, TO);
         lvBuyList.setAdapter(adapter);
 
-
-
         // イベント
         lvBuyList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,21 +62,20 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                // リストビューのチェック状態をログに出力する
-                ListView lv = view.findViewById(R.id.lvBuyList);
-                List<Integer> checked_list = new ArrayList<>();
-                int cnt = lv.getCount();
-                for (int i = 0; i < cnt; i++) {
-                    MyAdapter adapter = (MyAdapter) lv.getAdapter();
-                    checked_list.add(i);
-                    if (adapter.checkList.get(i)) {
-                        // 削除
-                        list.remove(i);
-                        cnt--;
-                    }
-                }
-                // 更新
-                adapter.notifyDataSetChanged();
+//                // リストビューのチェック状態を確認し、チェックのあるものを削除
+//                ListView lv = view.findViewById(R.id.lvBuyList);
+//                List<Integer> checked_list = new ArrayList<>();
+//                int cnt = lv.getCount();
+//                for (int i = 0; i < cnt; i++) {
+//                    MyAdapter adapter = (MyAdapter) lv.getAdapter();
+//                    checked_list.add(i);
+//                    if (adapter.checkList.get(i)) {
+//                        list.remove(i);
+//                        cnt--;
+//                    }
+//                }
+//                // 更新
+//                adapter.notifyDataSetChanged();
 
             }
         });
