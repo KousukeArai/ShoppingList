@@ -37,30 +37,12 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //画面部品リストビューを取得
         ListView lvBuyList = view.findViewById(R.id.lvBuyList);
-        //SimpleAdaptorで使用するListオブジェクトを用意
-        // リストデータの生成
-        List<Map<String, Object>> list = new ArrayList<>();
-        Map<String, Object> map = new HashMap<>();
 
-        map.put("title", "NO.00001");
-        map.put("name", "あいうえお");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("title", "NO.00002");
-        map.put("name", "かきくけこ");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("title", "NO.00003");
-        map.put("name", "さしすせそ");
-        map.put("check", false);
-        list.add(map);
+        // メインアクティビティが持つリストの取得
+        List<Map<String, Object>> list = MainActivity.list;
 
         // Mapのキー
-        String[] FROM = {"title", "name", "check"};
+        String[] FROM = {"name", "unit", "check"};
         // リソースのコントロールID
         int[] TO = {R.id.textView, R.id.textView2, R.id.checkBox};
 
@@ -88,16 +70,11 @@ public class HomeFragment extends Fragment {
                 int cnt = lv.getCount();
                 for (int i = 0; i < cnt; i++) {
                     MyAdapter adapter = (MyAdapter) lv.getAdapter();
-                    View view = adapter.getView(i, null, lv);
-                    TextView tv = view.findViewById(R.id.textView);
                     checked_list.add(i);
                     if (adapter.checkList.get(i)) {
-                        Log.i("MyTAG", tv.getText().toString() + "はtrueです。");
                         // 削除
                         list.remove(i);
                         cnt--;
-                    } else {
-                        Log.i("MyTAG", tv.getText().toString() + "はfalseです。");
                     }
                 }
                 // 更新
