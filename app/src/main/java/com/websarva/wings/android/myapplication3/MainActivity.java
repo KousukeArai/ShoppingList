@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    // Mapのキー
-    private final String[] FROM = {"title","name","check"};
-    // リソースのコントロールID
-    private final int[] TO = {R.id.textView, R.id.textView2,R.id.checkBox};
+//    // Mapのキー
+//    private final String[] FROM = {"title","name","check"};
+//    // リソースのコントロールID
+//    private final int[] TO = {R.id.textView, R.id.textView2,R.id.checkBox};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,70 +49,44 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
-        //画面部品を取得
-        ListView lv = findViewById(R.id.lvBuyList);
 
-        // リストデータの生成
-        List<Map<String,Object>> list = new ArrayList<>();
-        Map<String,Object> map = new HashMap<>();
 
-        map.put("title","NO.00001");
-        map.put("name","あいうえお");
-        map.put("check",false);
-        list.add(map);
 
-        map =  new HashMap<>();
-        map.put("title","NO.00002");
-        map.put("name","かきくけこ");
-        map.put("check",false);
-        list.add(map);
-
-        map =  new HashMap<>();
-        map.put("title","NO.00003");
-        map.put("name","さしすせそ");
-        map.put("check",false);
-        list.add(map);
-
-        // アダプターの設定
-        MyAdapter adapter = new MyAdapter(MainActivity.this,
-                list,R.layout.list,FROM,TO);
-        lv.setAdapter(adapter);
-
-        // イベント
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.this.setTitle(String.valueOf(position)+"番目がクリックされました。");
-            }
-        });
-
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // リストビューのチェック状態をログに出力する
-                ListView lv = findViewById(R.id.lvBuyList);
-                List<Integer> checked_list = new ArrayList<>();
-                int cnt = lv.getCount();
-                for(int i = 0;i < cnt;i++) {
-                    MyAdapter adapter = (MyAdapter)lv.getAdapter();
-                    View view = adapter.getView(i,null,lv);
-                    TextView tv = view.findViewById(R.id.textView);
-                    checked_list.add(i);
-                    if(adapter.checkList.get(i)) {
-                        Log.i("MyTAG", tv.getText().toString() + "はtrueです。");
-                        // 削除
-                        list.remove(i);
-                        cnt--;
-                    }else{
-                        Log.i("MyTAG", tv.getText().toString()+"はfalseです。");
-                    }
-                }
-                // 更新
-                adapter.notifyDataSetChanged();
-
-            }
-        });
+//        // イベント
+//        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                MainActivity.this.setTitle(String.valueOf(position)+"番目がクリックされました。");
+//            }
+//        });
+//
+//        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                // リストビューのチェック状態をログに出力する
+//                ListView lv = findViewById(R.id.lvBuyList);
+//                List<Integer> checked_list = new ArrayList<>();
+//                int cnt = lv.getCount();
+//                for(int i = 0;i < cnt;i++) {
+//                    MyAdapter adapter = (MyAdapter)lv.getAdapter();
+//                    View view = adapter.getView(i,null,lv);
+//                    TextView tv = view.findViewById(R.id.textView);
+//                    checked_list.add(i);
+//                    if(adapter.checkList.get(i)) {
+//                        Log.i("MyTAG", tv.getText().toString() + "はtrueです。");
+//                        // 削除
+//                        list.remove(i);
+//                        cnt--;
+//                    }else{
+//                        Log.i("MyTAG", tv.getText().toString()+"はfalseです。");
+//                    }
+//                }
+//                // 更新
+//                adapter.notifyDataSetChanged();
+//
+//            }
+//        });
     }
 }
 

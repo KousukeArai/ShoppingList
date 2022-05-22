@@ -1,9 +1,13 @@
 package com.websarva.wings.android.myapplication3.ui.home;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,25 +16,95 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.websarva.wings.android.myapplication3.MainActivity;
+import com.websarva.wings.android.myapplication3.MyAdapter;
 import com.websarva.wings.android.myapplication3.R;
 import com.websarva.wings.android.myapplication3.databinding.FragmentHomeBinding;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        //このフラグメントが所属するアクティビティオブジェクトを取得
+        Activity parentActivity = getActivity();
+        //フラグメントで表示する画面をXMLファイルからインフレートする
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        //画面部品リストビューを取得
+        ListView lvBuyList = view.findViewById(R.id.lvBuyList);
+        //SimpleAdaptorで使用するListオブジェクトを用意
+        // リストデータの生成
+        List<Map<String, Object>> list = new ArrayList<>();
+        Map<String, Object> map = new HashMap<>();
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-        return root;
-    }
+        map.put("title", "NO.00001");
+        map.put("name", "あいうえお");
+        map.put("check", false);
+        list.add(map);
 
-    public void onViewCreated(){
+        map = new HashMap<>();
+        map.put("title", "NO.00002");
+        map.put("name", "かきくけこ");
+        map.put("check", false);
+        list.add(map);
 
+        map = new HashMap<>();
+        map.put("title", "NO.00003");
+        map.put("name", "さしすせそ");
+        map.put("check", false);
+        list.add(map);
+
+        // Mapのキー
+        String[] FROM = {"title", "name", "check"};
+        // リソースのコントロールID
+        int[] TO = {R.id.textView, R.id.textView2, R.id.checkBox};
+
+        // アダプターの設定
+        MyAdapter adapter = new MyAdapter(parentActivity,
+                list, R.layout.list, FROM, TO);
+        lvBuyList.setAdapter(adapter);
+
+
+
+        // イベント
+        lvBuyList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            }
+        });
+
+        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // リストビューのチェック状態をログに出力する
+                ListView lv = view.findViewById(R.id.lvBuyList);
+                List<Integer> checked_list = new ArrayList<>();
+                int cnt = lv.getCount();
+                for (int i = 0; i < cnt; i++) {
+                    MyAdapter adapter = (MyAdapter) lv.getAdapter();
+                    View view = adapter.getView(i, null, lv);
+                    TextView tv = view.findViewById(R.id.textView);
+                    checked_list.add(i);
+                    if (adapter.checkList.get(i)) {
+                        Log.i("MyTAG", tv.getText().toString() + "はtrueです。");
+                        // 削除
+                        list.remove(i);
+                        cnt--;
+                    } else {
+                        Log.i("MyTAG", tv.getText().toString() + "はfalseです。");
+                    }
+                }
+                // 更新
+                adapter.notifyDataSetChanged();
+
+            }
+        });
+        return view;
     }
 }
