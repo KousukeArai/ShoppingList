@@ -2,4 +2,10 @@
     <string name="app_name">お買い物メモ</string>
     <string name="title_shoppingList">お買い物リスト</string>
     <string name="title_db">一覧</string>
+    <string name="menu_list_tabemono">食べ物</string>
+    <string name="menu_list_nomimono">飲み物</string>
+    <string name="menu_list_nitiyouhin">日用品</string>
+    <string name="tv_lb_name">選択されたアイテム</string>
+    <string name="tv_name">未選択</string>
+    <string name="btn_save">保存</string>
 </resources>
