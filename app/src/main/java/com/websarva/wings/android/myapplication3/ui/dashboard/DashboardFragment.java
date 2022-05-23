@@ -44,7 +44,7 @@ public class DashboardFragment extends Fragment {
 
         // アダプターの設定
         MyAdapter adapter = new MyAdapter(parentActivity,
-                list, R.layout.list, FROM, TO);
+                list, R.layout.table, FROM, TO);
         lvTable.setAdapter(adapter);
 
         // イベント

@@ -25,23 +25,21 @@ public class MyAdapter extends SimpleAdapter {
         for(int i=0; i<data.size();i++){
             Map map = (Map)data.get(i);
             checkList.put(i,(Boolean)map.get("check"));
-            // コメントの追加_3
-
         }
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
-        CheckBox ch = view.findViewById(R.id.cbList);
-
-        // チェックの状態が変化した場合はマップに記憶する
-        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                checkList.put(position,isChecked);
-            }
-        });
+//        CheckBox ch = view.findViewById(R.id.cbList);
+//
+//        // チェックの状態が変化した場合はマップに記憶する
+//        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                checkList.put(position,isChecked);
+//            }
+//        });
         return view;
     }
 }
