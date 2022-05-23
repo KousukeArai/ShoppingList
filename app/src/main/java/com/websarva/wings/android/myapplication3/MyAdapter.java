@@ -25,8 +25,7 @@ public class MyAdapter extends SimpleAdapter {
         for(int i=0; i<data.size();i++){
             Map map = (Map)data.get(i);
             checkList.put(i,(Boolean)map.get("check"));
-            // コメントの追加
-            // コメントの変更テスト
+            // コメントの追加テスト1
 
         }
     }
