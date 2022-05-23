@@ -57,9 +57,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.btAdd).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btEnd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 //                // リストビューのチェック状態を確認し、チェックのあるものを削除
 //                ListView lv = view.findViewById(R.id.lvBuyList);
@@ -75,6 +76,7 @@ public class HomeFragment extends Fragment {
 //                }
 //                // 更新
 //                adapter.notifyDataSetChanged();
+
 
             }
         });

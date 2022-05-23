@@ -20,15 +20,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="商品名"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toEndOf="@+id/cbList"
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:inputType="number"
         android:maxLength="4"
         android:maxLines="1"
-        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
