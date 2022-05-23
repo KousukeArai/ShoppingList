@@ -10,7 +10,7 @@
 
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/cbList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="商品名"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
         tools:layout_editor_absoluteY="0dp" />
 
     <EditText

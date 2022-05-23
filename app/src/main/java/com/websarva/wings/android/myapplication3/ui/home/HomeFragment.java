@@ -19,7 +19,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.websarva.wings.android.myapplication3.MainActivity;
 import com.websarva.wings.android.myapplication3.MyAdapter;
 import com.websarva.wings.android.myapplication3.R;
-import com.websarva.wings.android.myapplication3.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +43,7 @@ public class HomeFragment extends Fragment {
         // Mapのキー
         String[] FROM = {"name", "unit", "check"};
         // リソースのコントロールID
-        int[] TO = {R.id.textView, R.id.textView2, R.id.checkBox};
+        int[] TO = {R.id.textView, R.id.textView2, R.id.cbList};
 
         // アダプターの設定
         MyAdapter adapter = new MyAdapter(parentActivity,
@@ -58,7 +57,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

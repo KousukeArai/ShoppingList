@@ -33,7 +33,7 @@ public class MyAdapter extends SimpleAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
-        CheckBox ch = view.findViewById(R.id.checkBox);
+        CheckBox ch = view.findViewById(R.id.cbList);
 
         // チェックの状態が変化した場合はマップに記憶する
         ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
