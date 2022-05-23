@@ -26,6 +26,8 @@ public class MyAdapter extends SimpleAdapter {
             Map map = (Map)data.get(i);
             checkList.put(i,(Boolean)map.get("check"));
             // 仮変更コメント
+            // コメントの削除_2
+
         }
     }
 
