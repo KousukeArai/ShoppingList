@@ -27,6 +27,7 @@ public class MyAdapter extends SimpleAdapter {
             checkList.put(i,(Boolean)map.get("check"));
             // 仮変更コメント
             // コメントの削除_2
+            // コメントの追加_2
 
         }
     }
