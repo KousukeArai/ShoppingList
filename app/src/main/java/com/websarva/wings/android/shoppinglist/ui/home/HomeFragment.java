@@ -1,4 +1,4 @@
-package com.websarva.wings.android.myapplication3.ui.dashboard;
+package com.websarva.wings.android.shoppinglist.ui.home;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,57 +7,53 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.websarva.wings.android.myapplication3.MainActivity;
-import com.websarva.wings.android.myapplication3.MyAdapter;
-import com.websarva.wings.android.myapplication3.R;
-import com.websarva.wings.android.myapplication3.databinding.FragmentDashboardBinding;
+import com.websarva.wings.android.shoppinglist.MainActivity;
+import com.websarva.wings.android.shoppinglist.MyAdapter;
+import com.websarva.wings.android.shoppinglist.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DashboardFragment extends Fragment {
+public class HomeFragment extends Fragment {
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         //このフラグメントが所属するアクティビティオブジェクトを取得
         Activity parentActivity = getActivity();
         //フラグメントで表示する画面をXMLファイルからインフレートする
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         //画面部品リストビューを取得
-        ListView lvTable = view.findViewById(R.id.lvTable);
+        ListView lvBuyList = view.findViewById(R.id.lvBuyList);
+
         // メインアクティビティが持つリストの取得
-        List<Map<String, Object>> list = MainActivity.getList();
+        List<Map<String, Object>> list = MainActivity.list;
 
         // Mapのキー
-        String[] FROM = {"name", "check"};
+        String[] FROM = {"name", "unit", "check"};
         // リソースのコントロールID
-        int[] TO = {R.id.tvTable, R.id.cbTable};
+        int[] TO = {R.id.textView, R.id.textView2, R.id.cbBuyList};
 
         // アダプターの設定
         MyAdapter adapter = new MyAdapter(parentActivity,
-                list, R.layout.table, FROM, TO);
-        lvTable.setAdapter(adapter);
+                list, R.layout.list, FROM, TO);
+        lvBuyList.setAdapter(adapter);
 
         // イベント
-        lvTable.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvBuyList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             }
         });
 
-        view.findViewById(R.id.btAdd).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btEnd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 //                // リストビューのチェック状態を確認し、チェックのあるものを削除
 //                ListView lv = view.findViewById(R.id.lvBuyList);
@@ -73,6 +69,7 @@ public class DashboardFragment extends Fragment {
 //                }
 //                // 更新
 //                adapter.notifyDataSetChanged();
+
 
             }
         });

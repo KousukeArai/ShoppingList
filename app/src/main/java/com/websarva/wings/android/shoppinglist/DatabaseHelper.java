@@ -1,4 +1,4 @@
-package com.websarva.wings.android.myapplication3;
+package com.websarva.wings.android.shoppinglist;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

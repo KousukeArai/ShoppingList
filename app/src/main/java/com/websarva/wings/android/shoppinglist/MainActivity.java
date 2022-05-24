@@ -1,16 +1,9 @@
-package com.websarva.wings.android.myapplication3;
+package com.websarva.wings.android.shoppinglist;
 
-import static com.websarva.wings.android.myapplication3.CursorToList.makeList;
+import static com.websarva.wings.android.shoppinglist.CursorToList.makeList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.websarva.wings.android.myapplication3.databinding.ActivityMainBinding;
+import com.websarva.wings.android.shoppinglist.databinding.ActivityMainBinding;
 
 
 import java.util.ArrayList;

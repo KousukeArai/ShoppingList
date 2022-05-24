@@ -1,13 +1,8 @@
-package com.websarva.wings.android.myapplication3;
+package com.websarva.wings.android.shoppinglist;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.SimpleAdapter;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
