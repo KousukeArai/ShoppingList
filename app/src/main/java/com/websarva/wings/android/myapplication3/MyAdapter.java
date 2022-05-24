@@ -20,7 +20,7 @@ public class MyAdapter extends SimpleAdapter {
     public MyAdapter(Context context, List<? extends Map<String, ?>> data,
                      int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
-
+      
 //        // 初期値を設定する
 //        for(int i=0; i<data.size();i++){
 //            Map map = (Map)data.get(i);
