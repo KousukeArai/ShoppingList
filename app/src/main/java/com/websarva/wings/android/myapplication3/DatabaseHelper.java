@@ -15,6 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //親クラスのコンストラクタ呼び出し
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db){
         //テーブル作成用SQL文字列の作成
@@ -25,33 +26,70 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sb.append("unit TEXT,");
         sb.append("category TEXT");
         sb.append(");");
-//        sb.append("INSERT INTO ShoppingLists (_id, name, unit, category) VALUES (1,'牛肉','グラム','食べ物');");
-//        sb.append("INSERT INTO ShoppingLists (_id, name, unit, category) VALUES (2,'たまねぎ','個','食べ物');");
-
-
-        //                + "INSERT INTO ShoppingList VALUES (3,'バター','グラム','食べ物');"
-//                + "INSERT INTO ShoppingList VALUES (4,'ウスターソース','本','食べ物');"
-//                + "INSERT INTO ShoppingList VALUES (5,'卵','個','食べ物');"
-//                + "INSERT INTO ShoppingList VALUES (6,'長ネギ','本','食べ物');"
-//                + "INSERT INTO ShoppingList VALUES (7,'お茶','本','飲み物');"
-//                + "INSERT INTO ShoppingList VALUES (8,'糸とうがらし','袋','食べ物');"
-//                + "INSERT INTO ShoppingList VALUES (9,'トイレットペーパー','個','日用品');"
-//                + "INSERT INTO ShoppingList VALUES (10,'シャープペンシル','本','日用品');");
-
-//        INSERT INTO ShoppingList VALUES (11,'歯ブラシ','本','日用品');
-//        INSERT INTO ShoppingList VALUES (12,'タオル','枚','日用品');
-//        INSERT INTO ShoppingList VALUES (13,'洗剤','本','日用品');
-//        INSERT INTO ShoppingList VALUES (14,'シャンプー','本','日用品');
-//        INSERT INTO ShoppingList VALUES (15,'単三電池','本','日用品');
-//        INSERT INTO ShoppingList VALUES (16,'納豆','パック','食べ物');
-//        INSERT INTO ShoppingList VALUES (17,'鮭の切り身','切れ','食べ物');");
         String sql = sb.toString();
 
         //SQL実行
         db.execSQL(sql);
 
+        //インサート用SQL文字列の用意
+        String addSQL = "INSERT INTO ShoppingLists (name, unit, category) VALUES" +
 
+                "('たまねぎ', '個', '食べ物')," +
+                "('トマト', '個', '食べ物')," +
+                "('じゃがいも', '個', '食べ物')," +
+                "('にんじん', '個', '食べ物')," +
+                "('キャベツ', '個', '食べ物')," +
+                "('レタス', '個', '食べ物')," +
+                "('ねぎ', '本', '食べ物')," +
+                "('ニラ', '本', '食べ物')," +
+                "('だいこん', '本', '食べ物')," +
+                "('なす', '本', '食べ物')," +
+                "('きゅうり', '本', '食べ物')," +
+                "('かぼちゃ', '個', '食べ物')," +
+                "('もやし', '個', '食べ物')," +
+                "('ほうれん草', '個', '食べ物')," +
+                "('ピーマン', '個', '食べ物')," +
+                "('りんご', '個', '食べ物')," +
+                "('いちご', 'パック', '食べ物')," +
+                "('みかん', '個', '食べ物')," +
+                "('メロン', '個', '食べ物')," +
+                "('スイカ', '個', '食べ物')," +
+                "('レモン', '個', '食べ物')," +
+                "('鮭', 'パック', '食べ物')," +
+                "('サバ', 'パック', '食べ物')," +
+                "('タラ', 'パック', '食べ物')," +
+                "('牛肉','グラム','食べ物')," +
+                "('豚肉','グラム','食べ物')," +
+                "('鶏肉', 'グラム', '食べ物')," +
+                "('パン', '個', '食べ物')," +
+                "('シリアル', '個', '食べ物')," +
+                "('チーズ', '個', '食べ物')," +
+                "('お菓子', '個', '食べ物')," +
+                "('水', '本', '飲み物')," +
+                "('お茶', '本', '飲み物')," +
+                "('牛乳', '本', '飲み物')," +
+                "('オレンジジュース', '本', '飲み物')," +
+                "('コーラ', '本', '飲み物')," +
+                "('コーヒー', '本', '飲み物')," +
+                "('ビール', '本', '飲み物')," +
+                "('キッチンペーパー', '個', '日用品')," +
+                "('絆創膏', '個', '日用品')," +
+                "('トイレットペーパー', 'ロール', '日用品')," +
+                "('洗濯用洗剤', '本', '日用品')," +
+                "('台所用洗剤', '本', '日用品')," +
+                "('スポンジ', '個', '日用品')," +
+                "('シャンプー', '本', '日用品')," +
+                "('リンス', '本', '日用品')," +
+                "('ボディソープ', '本', '日用品')," +
+                "('石鹸', '個', '日用品')," +
+                "('サランラップ', '個', '日用品')," +
+                "('綿棒', '個', '日用品')," +
+                "('ゴミ袋', '個', '日用品')";
+
+        //SQL実行
+        db.execSQL(addSQL);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
     }

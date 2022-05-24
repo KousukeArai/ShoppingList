@@ -9,12 +9,12 @@ package com.websarva.wings.android.myapplication3;
 public class CursorToList {
     public static List makeList (Cursor cursor) {
 
-        List _buyList =MainActivity.createList();
+        List list =MainActivity.createList();
 
 
         //データベースから取得した値を格納する変数の用意。データがなかった時のための初期値も用意
-        String name;
-        String unit;
+        String name = "";
+        String unit = "";
         //SQL実行の戻り値であるカーソルオブジェクトをループさせてデータベース内のデータを取得
         while (cursor.moveToNext()) {
             Map<String, Object> map = new HashMap();
@@ -29,10 +29,10 @@ public class CursorToList {
 
             map.put("check", false);
 
-            _buyList.add(map);
+            list.add(map);
 
 
         }
-        return _buyList;
+        return list;
     }
 }

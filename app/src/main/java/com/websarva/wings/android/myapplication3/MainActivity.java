@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     //データベースヘルパーオブジェクト
     private DatabaseHelper _helper;
 
-    //データベースをリスト化するメソッド
+    //データベースの情報を格納するリスト
     private static List<Map<String,String>> _dbList;
 
     //
@@ -75,60 +75,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
-
-
-        //
-        // --------------------
-        // -----水谷追加分2開始-----
-        // --------------------
-        //
-
-
-
         //DBヘルパーオブジェクトを生成
         _helper = new DatabaseHelper(MainActivity.this);
         SQLiteDatabase db = _helper.getWritableDatabase();
-
-        //dbに登録
-        //インサート用SQL文字列の用意
-//        List<List<Integer>> itemList = new ArrayList<>();
-//        int count = 1;
-//        while(count < ) {
-            String sqlInsert = "INSERT INTO ShoppingLists (_id, name, unit, category) VALUES" +
-                    "(1,'牛肉','グラム','食べ物')," +
-                    "(2,'豚肉','グラム','食べ物')," +
-                    "(3,'鶏肉', 'グラム', '食べ物')," +
-                    "(4, 'たまねぎ', '個', '食べ物')," +
-                    "(5, 'トマト', '個', '食べ物')," +
-                    "(6, 'じゃがいも', '個', '食べ物')," +
-                    "(7, 'にんじん', '個', '食べ物')," +
-                    "(8, 'キャベツ', '個', '食べ物')," +
-                    "(9, 'レタス', '個', '食べ物')," +
-                    "(10, 'ねぎ', '本', '食べ物')," +
-                    "(11, 'だいこん', '本', '食べ物')," +
-                    "(12, 'なす', '本', '食べ物')," +
-                    "(13, 'きゅうり', '本', '食べ物')," +
-                    "(14, 'かぼちゃ', '個', '食べ物')," +
-                    "(15, 'お茶', '本', '飲み物')," +
-                    "(16, '牛乳', '本', '飲み物')," +
-                    "(17, 'オレンジジュース', '本', '飲み物')," +
-                    "(18, 'コーラ', '本', '飲み物')," +
-                    "(19, 'コーヒー', '本', '飲み物')," +
-                    "(20, 'ビール', '本', '飲み物')," +
-                    "(21, 'トイレットペーパー', 'ロール', '日用品')," +
-                    "(22, '洗濯用洗剤', '本', '日用品')," +
-                    "(23, '台所用洗剤', '本', '日用品')," +
-                    "(24, 'スポンジ', '個', '日用品')," +
-                    "(25, 'シャンプー', '本', '日用品')," +
-                    "(26, 'リンス', '本', '日用品')," +
-                    "(27, '石鹸', '個', '日用品')";
-
-            //SQL文字列をもとにプリペアドステートメントを取得
-            SQLiteStatement stmt = db.compileStatement(sqlInsert);
-
-            //インサートSQLの実行
-            stmt.executeInsert();
-
 
         //主キーによる検索SQL文字列の用意
         String sql = "SELECT * FROM ShoppingLists";
@@ -174,21 +123,19 @@ public class MainActivity extends AppCompatActivity {
 */
     }
 
-    public static List<Map<String, String>> createList () {
-        List<Map<String, String>> list = new ArrayList<>();
-
-        Map<String, String> map = new HashMap<>();
-
-
-        return list;
-
-    }
-
     @Override
     protected void onDestroy () {
         //DBヘルパーオブジェクトの解放
         _helper.close();
         super.onDestroy();
+    }
+
+    public static List<Map<String, String>> createList () {
+        List<Map<String, String>> list = new ArrayList<>();
+        Map<String, String> map = new HashMap<>();
+
+        return list;
+
     }
 
     public static List getList() {
