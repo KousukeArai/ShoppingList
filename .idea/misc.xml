@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Study/Android/ShoppingList/app/src/main/res/layout/list.xml" value="0.15729483282674772" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_home.xml" value="0.1" />
@@ -12,5 +11,5 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>
