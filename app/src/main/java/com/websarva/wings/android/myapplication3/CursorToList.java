@@ -1,12 +1,12 @@
 package com.websarva.wings.android.myapplication3;
 
-import android.database.Cursor;
+        import android.database.Cursor;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+        import java.util.HashMap;
+        import java.util.List;
+        import java.util.Map;
 
-public class DashboardList {
+public class CursorToList {
     public static List makeList (Cursor cursor) {
 
         List _buyList =MainActivity.createList();
@@ -17,7 +17,7 @@ public class DashboardList {
         String unit;
         //SQL実行の戻り値であるカーソルオブジェクトをループさせてデータベース内のデータを取得
         while (cursor.moveToNext()) {
-            Map<String, String> map = new HashMap();
+            Map<String, Object> map = new HashMap();
             //カラムのインデックス値を取得
             int idxName = cursor.getColumnIndex("name");
             name = cursor.getString(idxName);
@@ -27,7 +27,11 @@ public class DashboardList {
             unit = cursor.getString(idxUnit);
             map.put("unit", unit);
 
+            map.put("check", false);
+
             _buyList.add(map);
+
+
         }
         return _buyList;
     }

@@ -1,9 +1,10 @@
 package com.websarva.wings.android.myapplication3;
 
+import static com.websarva.wings.android.myapplication3.CursorToList.makeList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -22,6 +22,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.websarva.wings.android.myapplication3.databinding.ActivityMainBinding;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,9 +49,8 @@ public class MainActivity extends AppCompatActivity {
     //りすとびゅーを表すフィールド
     private ListView _lvkaimono;
 
-
     //データベースをリスト化するメソッド
-    private  List<Map<String,String>>_buyList;
+    private static List<Map<String,String>> _dbList;
 
     //
     //
@@ -78,92 +78,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        Map<String, Object> map = new HashMap<>();
-
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
 
 
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-
-        map = new HashMap<>();
-        map.put("name", "たまねぎ");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "にんじん");
-        map.put("unit", "本");
-        map.put("check", false);
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put("name", "トマト");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
 
         //
         // --------------------
@@ -171,18 +87,28 @@ public class MainActivity extends AppCompatActivity {
         // --------------------
         //
 
-        _buyList = createList();
+
 
         //DBヘルパーオブジェクトを生成
         _helper = new DatabaseHelper(MainActivity.this);
         SQLiteDatabase db = _helper.getWritableDatabase();
 
+        //dbに登録
+        //インサート用SQL文字列の用意
+        String sqlInsert = "INSERT INTO ShoppingLists (_id, name, unit, category) VALUES (1, 'トマト', '個', '食べ物')";
+
+        //SQL文字列をもとにプリペアドステートメントを取得
+        SQLiteStatement stmt = db.compileStatement(sqlInsert);
+
+        //インサートSQLの実行
+        stmt.executeInsert();
+
         //主キーによる検索SQL文字列の用意
-        String sql = "SELECT * FROM kaimonomemos WHERE _id = " + _kaimonoID;
+        String sql = "SELECT * FROM ShoppingLists";
         //SQL実行
         Cursor cursor = db.rawQuery(sql, null);
 
-        _buyList = DashboardList.makeList(cursor);
+        _dbList = makeList(cursor);
 
         //データベースから取得した値を格納する変数の用意。データがなかった時のための初期値も用意
 //        String name = "";
@@ -199,15 +125,15 @@ public class MainActivity extends AppCompatActivity {
 //            unit = getString(idxUnit);
 //            map.put("unit", unit);
 //
-//            _buyList.add(map);
+//            _dbList.add(map);
 
-
+/*
         //アイテムリスト用ListView(lvkaimono)を取得
         ListView lvkaimono = findViewById(R.id.lvkaimono);
 
         String[] from = {"name", "unit"};
         int[] to = {android.R.id.text1, android.R.id.text2};
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), _buyList,
+        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), _dbList,
                 android.R.layout.simple_list_item_1, from, to);
 
         lvkaimono.setAdapter(adapter);
@@ -218,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+*/
     }
 
     public static List<Map<String, String>> createList () {
@@ -238,10 +164,13 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    public static List getList() {
+        return _dbList;
+    }
 
 
 
-
+/*
 //    //リストがタップされた時の処理メソッド
 //    private class ListItemClickListener implements AdapterView.OnItemClickListener {
 //        @Override
@@ -349,11 +278,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        _buyList=DashboardList.makeList(cursor);
+        _dbList = makeList(cursor);
 
         String[] from = {"name", "unit"};
         int[] to = {android.R.id.text1, android.R.id.text2};
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), _buyList,
+        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), _dbList,
                 android.R.layout.simple_list_item_1, from, to);
 
         _lvkaimono.setAdapter(adapter);
@@ -372,5 +301,7 @@ public class MainActivity extends AppCompatActivity {
     // -----水谷追加分2終了-----
     // --------------------
     //
+
+ */
 }
 
