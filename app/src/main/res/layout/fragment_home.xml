@@ -25,23 +25,4 @@ tools:context=".ui.home.HomeFragment">
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- 2022/05/23/17：06 push -->
-    <ListView
-        android:id="@+id/lvkaimono"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="0.6" />
-
-
-
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:onClick="onSaveButtonCrick"
-        android:text="@string/btn_save"/>
-    <!-- 2022/05/23/17：06 push -->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

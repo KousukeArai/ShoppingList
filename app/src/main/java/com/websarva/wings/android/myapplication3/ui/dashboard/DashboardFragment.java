@@ -20,6 +20,8 @@ import com.websarva.wings.android.myapplication3.MyAdapter;
 import com.websarva.wings.android.myapplication3.R;
 import com.websarva.wings.android.myapplication3.databinding.FragmentDashboardBinding;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,9 +35,16 @@ public class DashboardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         //画面部品リストビューを取得
         ListView lvTable = view.findViewById(R.id.lvTable);
-
         // メインアクティビティが持つリストの取得
-        List<Map<String, Object>> list = MainActivity.list;
+        //List<Map<String, Object>> list = MainActivity.getList();
+
+
+        List<Map<String, Object>> list = new ArrayList<>();
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "りんご");
+        map.put("unit", "個");
+        map.put("check", false);
+        list.add(map);
 
         // Mapのキー
         String[] FROM = {"name", "check"};

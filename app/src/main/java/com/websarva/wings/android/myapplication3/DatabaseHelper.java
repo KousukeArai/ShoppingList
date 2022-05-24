@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     //データベース名の定数フィールド
-    private static final String DATABASE_NAME="kaimonomemo.db";
+    private static final String DATABASE_NAME="ShoppingList.db";
     //バージョン情報の定数フィールド
     private static final int DATABASE_VERSION=1;
 
@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         //テーブル作成用SQL文字列の作成
         StringBuilder sb= new StringBuilder();
-        sb.append("CREATE TABLE kaimonomemos(");
+        sb.append("CREATE TABLE ShoppingLists (");
         sb.append("_id INTEGER PRIMARY KEY,");
         sb.append("name TEXT,");
         sb.append("unit TEXT");
