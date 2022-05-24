@@ -36,15 +36,12 @@ public class DashboardFragment extends Fragment {
         //画面部品リストビューを取得
         ListView lvTable = view.findViewById(R.id.lvTable);
         // メインアクティビティが持つリストの取得
-        //List<Map<String, Object>> list = MainActivity.getList();
-
-
-        List<Map<String, Object>> list = new ArrayList<>();
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", "りんご");
-        map.put("unit", "個");
-        map.put("check", false);
-        list.add(map);
+        List<Map<String, Object>> list = MainActivity.getList();
+//        List<Map<String, Object>> list = new ArrayList<>();
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("name", "トマト");
+//        map.put("check", false);
+//        list.add(map);
 
         // Mapのキー
         String[] FROM = {"name", "check"};

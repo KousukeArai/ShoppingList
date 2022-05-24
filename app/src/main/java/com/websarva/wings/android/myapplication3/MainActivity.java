@@ -3,6 +3,7 @@ package com.websarva.wings.android.myapplication3;
 import static com.websarva.wings.android.myapplication3.CursorToList.makeList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -92,8 +93,18 @@ public class MainActivity extends AppCompatActivity {
         _helper = new DatabaseHelper(MainActivity.this);
         SQLiteDatabase db = _helper.getWritableDatabase();
 
+        //dbに登録
+        //インサート用SQL文字列の用意
+        String sqlInsert = "INSERT INTO ShoppingLists (_id, name, unit, category) VALUES (1, 'トマト', '個', '食べ物')";
+
+        //SQL文字列をもとにプリペアドステートメントを取得
+        SQLiteStatement stmt = db.compileStatement(sqlInsert);
+
+        //インサートSQLの実行
+        stmt.executeInsert();
+
         //主キーによる検索SQL文字列の用意
-        String sql = "SELECT * FROM ShoppingLists WHERE _id = " + _kaimonoID;
+        String sql = "SELECT * FROM ShoppingLists";
         //SQL実行
         Cursor cursor = db.rawQuery(sql, null);
 
