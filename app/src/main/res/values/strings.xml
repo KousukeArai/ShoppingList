@@ -8,4 +8,6 @@
     <string name="tv_lb_name">選択されたアイテム</string>
     <string name="tv_name">未選択</string>
     <string name="btn_save">保存</string>
+    <string name="btn_end">お買い物終了</string>
+    <string name="btn_add">お買い物リストに追加</string>
 </resources>
