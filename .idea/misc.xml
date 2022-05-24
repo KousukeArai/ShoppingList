@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Study/Android/abcd/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.15552178318135765" />
+        <entry key="..\:/Study/Android/abcd/ShoppingList/app/src/main/res/layout/fragment_dashboard.xml" value="0.15552178318135765" />
+        <entry key="..\:/Study/Android/abcd/ShoppingList/app/src/main/res/layout/fragment_home.xml" value="0.13703703703703704" />
+        <entry key="..\:/Study/Android/abcd/ShoppingList/app/src/main/res/layout/list.xml" value="0.33" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_home.xml" value="0.1" />
