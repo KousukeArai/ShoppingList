@@ -19,14 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         //テーブル作成用SQL文字列の作成
-        StringBuilder sb= new StringBuilder();
-        sb.append("CREATE TABLE ShoppingLists (");
-        sb.append("_id INTEGER PRIMARY KEY,");
-        sb.append("name TEXT,");
-        sb.append("unit TEXT,");
-        sb.append("category TEXT");
-        sb.append(");");
-        String sql = sb.toString();
+        String sql = "CREATE TABLE ShoppingLists (" +
+                "_id INTEGER PRIMARY KEY," +
+                "name TEXT," +
+                "unit TEXT," +
+                "category TEXT" +
+                ");";
 
         //SQL実行
         db.execSQL(sql);
