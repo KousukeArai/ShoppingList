@@ -3,20 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.10144927536231885" />
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/fragment_dashboard.xml" value="0.10144927536231885" />
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/list.xml" value="0.5" />
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/table.xml" value="0.9" />
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1859375" />
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18425925925925926" />
-        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18425925925925926" />
+        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/list.xml" value="0.33" />
+        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/table.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/list.xml" value="1.0" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/list.xml" value="0.1" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>

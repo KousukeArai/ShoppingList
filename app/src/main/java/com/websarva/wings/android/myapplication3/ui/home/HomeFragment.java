@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         // Mapのキー
         String[] FROM = {"name", "unit", "check"};
         // リソースのコントロールID
-        int[] TO = {R.id.textView, R.id.textView2, R.id.cbList};
+        int[] TO = {R.id.textView, R.id.textView2, R.id.cbBuyList};
 
         // アダプターの設定
         MyAdapter adapter = new MyAdapter(parentActivity,

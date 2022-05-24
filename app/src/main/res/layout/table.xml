@@ -17,8 +17,10 @@
 
     <TextView
         android:id="@+id/tvTable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="173dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:text="商品名"
         app:layout_constraintStart_toEndOf="@+id/cbTable"

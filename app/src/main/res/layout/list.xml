@@ -2,13 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants">
 
+
     <CheckBox
-        android:id="@+id/cbList"
+        android:id="@+id/cbBuyList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,34 +18,40 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="173dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:text="商品名"
-        app:layout_constraintStart_toEndOf="@+id/cbList"
+        app:layout_constraintStart_toEndOf="@+id/cbBuyList"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:id="@+id/editText"
+        android:layout_width="38dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="14dp"
         android:inputType="number"
         android:maxLength="4"
         android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="35dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_weight="1"
         android:text="単位"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
