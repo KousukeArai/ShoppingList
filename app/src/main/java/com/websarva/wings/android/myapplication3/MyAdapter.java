@@ -15,33 +15,32 @@ import java.util.Map;
 public class MyAdapter extends SimpleAdapter {
 
     // 外部から呼び出し可能なマップ
-    public Map<Integer,Boolean> checkList = new HashMap<>();
+    //public Map<Integer,Boolean> checkList = new HashMap<>();
 
     public MyAdapter(Context context, List<? extends Map<String, ?>> data,
                      int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
-
-        // 初期値を設定する
-        for(int i=0; i<data.size();i++){
-            Map map = (Map)data.get(i);
-            checkList.put(i,(Boolean)map.get("check"));
-            // コメントの追加2
-
-        }
-    }
-
-    @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        View view = super.getView(position, convertView, parent);
-        CheckBox ch = view.findViewById(R.id.checkBox);
-
-        // チェックの状態が変化した場合はマップに記憶する
-        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                checkList.put(position,isChecked);
-            }
-        });
-        return view;
+      
+//        // 初期値を設定する
+//        for(int i=0; i<data.size();i++){
+//            Map map = (Map)data.get(i);
+//            checkList.put(i,(Boolean)map.get("check"));
     }
 }
+
+//    @Override
+//    public View getView(final int position, View convertView, ViewGroup parent) {
+//        View view = super.getView(position, convertView, parent);
+//
+//        CheckBox ch = view.findViewById(R.id.cbList);
+//
+//        // チェックの状態が変化した場合はマップに記憶する
+//        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                checkList.put(position,isChecked);
+//            }
+//        });
+//
+//        return view;
+//    }
