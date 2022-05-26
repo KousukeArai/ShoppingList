@@ -12,11 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.websarva.wings.android.shoppinglist.MainActivity;
-import com.websarva.wings.android.shoppinglist.MyAdapter;
 import com.websarva.wings.android.shoppinglist.R;
 import com.websarva.wings.android.shoppinglist.TableAdapter;
-import com.websarva.wings.android.shoppinglist.databinding.FragmentDashboardBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,7 +30,7 @@ public class DashboardFragment extends Fragment {
         //画面部品リストビューを取得
         ListView lvTable = view.findViewById(R.id.lvTable);
         // メインアクティビティが持つリストの取得
-        List<Map<String, Object>> list = MainActivity.getList();
+        List<Map<String, Object>> dbList = MainActivity.getList();
 
         // Mapのキー
         String[] FROM = {"name", "check"};
@@ -40,7 +39,7 @@ public class DashboardFragment extends Fragment {
 
         // アダプターの設定
         TableAdapter adapter = new TableAdapter(parentActivity,
-                list, R.layout.table, FROM, TO);
+                dbList, R.layout.table, FROM, TO);
         lvTable.setAdapter(adapter);
 
         // イベント
@@ -54,20 +53,22 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-//                // リストビューのチェック状態を確認し、チェックのあるものを削除
-//                ListView lv = view.findViewById(R.id.lvBuyList);
-//                List<Integer> checked_list = new ArrayList<>();
-//                int cnt = lv.getCount();
-//                for (int i = 0; i < cnt; i++) {
-//                    MyAdapter adapter = (MyAdapter) lv.getAdapter();
-//                    checked_list.add(i);
-//                    if (adapter.checkList.get(i)) {
-//                        list.remove(i);
-//                        cnt--;
-//                    }
-//                }
-//                // 更新
-//                adapter.notifyDataSetChanged();
+
+                // リストビューのチェック状態を確認し、チェックのあるものを削除
+                ListView lv = view.findViewById(R.id.lvTable);
+                List<Integer> checked_list = new ArrayList<>();
+                int cnt = lv.getCount();
+                for (int i = 0; i < cnt; i++) {
+                    TableAdapter adapter = (TableAdapter) lv.getAdapter();
+                    checked_list.add(i);
+                    if (adapter.checkList.get(i)) {
+                        dbList.remove(i);
+                        cnt--;
+                    }
+                }
+                // 更新
+                adapter.notifyDataSetChanged();
+
 
             }
         });
