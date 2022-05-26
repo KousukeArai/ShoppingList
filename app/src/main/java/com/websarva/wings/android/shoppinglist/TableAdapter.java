@@ -35,6 +35,7 @@ public class TableAdapter extends ArrayAdapter<MyData> {
         CheckBox checkBox = convertView.findViewById(R.id.cbTable);
         checkBox.setOnCheckedChangeListener(null);
         checkBox.setChecked(item.isChecked());
+
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {

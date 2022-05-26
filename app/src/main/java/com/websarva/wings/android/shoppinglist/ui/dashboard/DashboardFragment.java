@@ -44,7 +44,7 @@ public class DashboardFragment extends Fragment {
             i++;
         }
 
-        TableAdapter adapter = new TableAdapter(parentActivity,R.layout.list,list);
+        TableAdapter adapter = new TableAdapter(parentActivity,R.layout.table,list);
         lvTable.setAdapter(adapter);
 
         // イベント

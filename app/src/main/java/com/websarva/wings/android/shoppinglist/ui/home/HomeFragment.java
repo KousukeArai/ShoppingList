@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment;
 
 import com.websarva.wings.android.shoppinglist.MainActivity;
 import com.websarva.wings.android.shoppinglist.MyAdapter;
+import com.websarva.wings.android.shoppinglist.MyData;
 import com.websarva.wings.android.shoppinglist.R;
+import com.websarva.wings.android.shoppinglist.TableAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,18 +32,21 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //画面部品リストビューを取得
         ListView lvBuyList = view.findViewById(R.id.lvBuyList);
-
         // メインアクティビティが持つリストの取得
-        List<Map<String, Object>> list = MainActivity.list;
+        List<Map<String, Object>> buyList = MainActivity.buyList;
 
-        // Mapのキー
-        String[] FROM = {"name", "unit", "check"};
-        // リソースのコントロールID
-        int[] TO = {R.id.textView, R.id.textView2, R.id.cbBuyList};
+        List<MyData> list = new ArrayList<>();
 
-        // アダプターの設定
-        MyAdapter adapter = new MyAdapter(parentActivity,
-                list, R.layout.list, FROM, TO);
+        int i = 0;
+        while(i < buyList.size()){
+            MyData myData = new MyData();
+            myData.set_textName((String) buyList.get(i).get("name"));
+            myData.setChecked(false);
+            list.add(myData);
+            i++;
+        }
+
+        MyAdapter adapter = new MyAdapter(parentActivity,R.layout.list,list);
         lvBuyList.setAdapter(adapter);
 
         // イベント
