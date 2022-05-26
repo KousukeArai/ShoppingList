@@ -3,28 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2203125" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2203125" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2203125" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/layout/list.xml" value="1.0" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/layout/table.xml" value="0.20416666666666666" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/list.xml" value="0.33" />
+        <entry key="..\:/Study/AndroidStudio/ShoppingList/app/src/main/res/layout/table.xml" value="0.1" />
+        <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Study/Androidstudio/MyApplication3/app/src/main/res/layout/list.xml" value="1.0" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Study/ShoppingList/app/src/main/res/layout/list.xml" value="0.1" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK" />
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.1" />
-      </ProjectState>
-    </option>
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>
