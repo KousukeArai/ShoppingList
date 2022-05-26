@@ -1,26 +1,26 @@
 package com.websarva.wings.android.shoppinglist;
 
 public class MyData {
-    private String textName = "";
-    private Boolean checkdata = false;
-    private String unit = "";
+    private String _textName = "";
+    private Boolean _checkData = false;
+    private String _unit = "";
 
-    public void setTextName(String str){
-        textName = str;
+    public void set_textName(String str){
+        _textName = str;
     }
-    public String getTextName(){
-        return textName;
+    public String get_textName(){
+        return _textName;
     }
     public void setChecked(boolean bool){
-        checkdata = bool;
+        _checkData = bool;
     }
     public boolean isChecked(){
-        return checkdata;
+        return _checkData;
     }
-    public void setUnit(String unt) {
-        unit = unt;
+    public void set_unit(String unit) {
+        _unit = unit;
     }
-    public String getUnit(){
-        return unit;
+    public String get_unit(){
+        return _unit;
     }
 }

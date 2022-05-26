@@ -22,11 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    //
-    //
-    // -----水谷追加分1開始-----
-    //
-    //
+
     //選択されたアイテムの主キーIDを表すフィールド
     private int _kaimonoID = -1;
 
@@ -40,15 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     //データベースの情報を格納するリスト
     private static List<Map<String,String>> _dbList = new ArrayList<>();
-
-    //
-    //
-    // -----水谷追加分1終了-----
-    //
-    //
+    //買い物リストを格納するリスト
+    public static List<Map<String, Object>> list = new ArrayList<>();
 
     private ActivityMainBinding binding;
-    public static List<Map<String, Object>> list = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

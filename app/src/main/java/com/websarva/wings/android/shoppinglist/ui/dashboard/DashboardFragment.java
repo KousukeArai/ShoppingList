@@ -33,18 +33,16 @@ public class DashboardFragment extends Fragment {
         // メインアクティビティが持つリストの取得
         List<Map<String, Object>> dbList = MainActivity.getList();
 
-
         List<MyData> list = new ArrayList<>();
 
-        MyData myData = new MyData();
-        myData.setTextName("あああああ");
-        myData.setChecked(true);
-        list.add(myData);
-
-        MyData myData2 = new MyData();
-        myData2.setTextName("いいいいい");
-        myData2.setChecked(false);
-        list.add(myData2);
+        int i = 0;
+        while(i < dbList.size()){
+            MyData myData = new MyData();
+            myData.set_textName((String) dbList.get(i).get("name"));
+            myData.setChecked(false);
+            list.add(myData);
+            i++;
+        }
 
         TableAdapter adapter = new TableAdapter(parentActivity,R.layout.list,list);
         lvTable.setAdapter(adapter);

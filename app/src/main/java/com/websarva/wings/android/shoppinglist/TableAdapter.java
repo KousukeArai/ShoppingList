@@ -31,7 +31,7 @@ public class TableAdapter extends ArrayAdapter<MyData> {
 
         // MyDataのデータをViewの各ウィジェットにセットする
         TextView textView = convertView.findViewById(R.id.tvTable);
-        textView.setText(item.getTextName());
+        textView.setText(item.get_textName());
         CheckBox checkBox = convertView.findViewById(R.id.cbTable);
         checkBox.setOnCheckedChangeListener(null);
         checkBox.setChecked(item.isChecked());
