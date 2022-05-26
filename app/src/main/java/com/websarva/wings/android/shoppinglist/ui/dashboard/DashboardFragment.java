@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.websarva.wings.android.shoppinglist.MainActivity;
 import com.websarva.wings.android.shoppinglist.MyAdapter;
 import com.websarva.wings.android.shoppinglist.R;
+import com.websarva.wings.android.shoppinglist.TableAdapter;
 import com.websarva.wings.android.shoppinglist.databinding.FragmentDashboardBinding;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class DashboardFragment extends Fragment {
         int[] TO = {R.id.tvTable, R.id.cbTable};
 
         // アダプターの設定
-        MyAdapter adapter = new MyAdapter(parentActivity,
+        TableAdapter adapter = new TableAdapter(parentActivity,
                 list, R.layout.table, FROM, TO);
         lvTable.setAdapter(adapter);
 

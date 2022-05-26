@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.Map;
 
 // カスタムアダプター
-public class MyAdapter extends  SimpleAdapter{
+public class TableAdapter extends  SimpleAdapter{
 
     // 外部から呼び出し可能なマップ
     public Map<Integer,Boolean> checkList = new HashMap<>();
 
-    public MyAdapter(Context context, List<? extends Map<String, ?>> data,
+    public TableAdapter(Context context, List<? extends Map<String, ?>> data,
                      int resource, String[] from, int[] to) {
         super(context, data, resource, from, to);
 
@@ -31,7 +31,7 @@ public class MyAdapter extends  SimpleAdapter{
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
-        CheckBox ch = view.findViewById(R.id.cbBuyList);
+        CheckBox ch = view.findViewById(R.id.cbTable);
 
         // チェックの状態が変化した場合はマップに記憶する
 //        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -43,3 +43,4 @@ public class MyAdapter extends  SimpleAdapter{
         return view;
     }
 }
+
