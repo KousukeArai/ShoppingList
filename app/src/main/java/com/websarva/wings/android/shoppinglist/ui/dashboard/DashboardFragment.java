@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.websarva.wings.android.shoppinglist.MainActivity;
+import com.websarva.wings.android.shoppinglist.MyData;
 import com.websarva.wings.android.shoppinglist.R;
 import com.websarva.wings.android.shoppinglist.TableAdapter;
 
@@ -32,14 +33,20 @@ public class DashboardFragment extends Fragment {
         // メインアクティビティが持つリストの取得
         List<Map<String, Object>> dbList = MainActivity.getList();
 
-        // Mapのキー
-        String[] FROM = {"name", "check"};
-        // リソースのコントロールID
-        int[] TO = {R.id.tvTable, R.id.cbTable};
 
-        // アダプターの設定
-        TableAdapter adapter = new TableAdapter(parentActivity,
-                dbList, R.layout.table, FROM, TO);
+        List<MyData> list = new ArrayList<>();
+
+        MyData myData = new MyData();
+        myData.setTextName("あああああ");
+        myData.setChecked(true);
+        list.add(myData);
+
+        MyData myData2 = new MyData();
+        myData2.setTextName("いいいいい");
+        myData2.setChecked(false);
+        list.add(myData2);
+
+        TableAdapter adapter = new TableAdapter(parentActivity,R.layout.list,list);
         lvTable.setAdapter(adapter);
 
         // イベント
@@ -53,6 +60,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+/*
 
                 // リストビューのチェック状態を確認し、チェックのあるものを削除
                 ListView lv = view.findViewById(R.id.lvTable);
@@ -68,6 +76,7 @@ public class DashboardFragment extends Fragment {
                 }
                 // 更新
                 adapter.notifyDataSetChanged();
+*/
 
 
             }
