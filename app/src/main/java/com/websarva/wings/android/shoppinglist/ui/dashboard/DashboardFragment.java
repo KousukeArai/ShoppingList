@@ -54,7 +54,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
 
 
-                // リストビューのチェック状態を確認し、チェックのあるものを削除
+/*                // リストビューのチェック状態を確認し、チェックのあるものを削除
                 ListView lv = view.findViewById(R.id.lvTable);
                 List<Integer> checked_list = new ArrayList<>();
                 int cnt = lv.getCount();
@@ -62,12 +62,12 @@ public class DashboardFragment extends Fragment {
                     TableAdapter adapter = (TableAdapter) lv.getAdapter();
                     checked_list.add(i);
                     if (adapter.checkList.get(i)) {
-                        dbList.remove(i);
+                        MainActivity.list.add(dbList(i));
                         cnt--;
                     }
                 }
                 // 更新
-                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();*/
 
 
             }

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseHelper _helper;
 
     //データベースの情報を格納するリスト
-    private static List<Map<String,String>> _dbList;
+    private static List<Map<String,String>> _dbList = new ArrayList<>();
 
     //
     //
