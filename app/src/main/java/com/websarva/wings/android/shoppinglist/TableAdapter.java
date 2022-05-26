@@ -34,12 +34,12 @@ public class TableAdapter extends  SimpleAdapter{
         CheckBox ch = view.findViewById(R.id.cbTable);
 
         // チェックの状態が変化した場合はマップに記憶する
-//        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                checkList.put(position,isChecked);
-//            }
-//        });
+        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                checkList.put(position,isChecked);
+            }
+        });
         return view;
     }
 }

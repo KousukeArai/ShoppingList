@@ -78,42 +78,6 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = db.rawQuery(sql, null);
 
         _dbList = makeList(cursor);
-
-        //データベースから取得した値を格納する変数の用意。データがなかった時のための初期値も用意
-//        String name = "";
-//        String unit = "";
-//        //SQL実行の戻り値であるカーソルオブジェクトをループさせてデータベース内のデータを取得
-//        while (cursor.moveToNext()) {
-//            Map<String, String> map = new HashMap();
-//            //カラムのインデックス値を取得
-//            int idxName = cursor.getColumnIndex("name");
-//            name = getString(idxName);
-//            map.put("name", name);
-//
-//            int idxUnit = cursor.getColumnIndex("unit");
-//            unit = getString(idxUnit);
-//            map.put("unit", unit);
-//
-//            _dbList.add(map);
-
-/*
-        //アイテムリスト用ListView(lvkaimono)を取得
-        ListView lvkaimono = findViewById(R.id.lvkaimono);
-
-        String[] from = {"name", "unit"};
-        int[] to = {android.R.id.text1, android.R.id.text2};
-        SimpleAdapter adapter = new SimpleAdapter(getApplicationContext(), _dbList,
-                android.R.layout.simple_list_item_1, from, to);
-
-        lvkaimono.setAdapter(adapter);
-        //lvKaimonoにリスナ登録
-        lvkaimono.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });
-*/
     }
 
     @Override

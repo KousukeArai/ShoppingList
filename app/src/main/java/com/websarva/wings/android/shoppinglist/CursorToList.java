@@ -1,10 +1,10 @@
 package com.websarva.wings.android.shoppinglist;
 
-        import android.database.Cursor;
+import android.database.Cursor;
 
-        import java.util.HashMap;
-        import java.util.List;
-        import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CursorToList {
     public static List makeList (Cursor cursor) {

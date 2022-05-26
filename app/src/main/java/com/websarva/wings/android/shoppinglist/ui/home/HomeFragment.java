@@ -15,6 +15,7 @@ import com.websarva.wings.android.shoppinglist.MainActivity;
 import com.websarva.wings.android.shoppinglist.MyAdapter;
 import com.websarva.wings.android.shoppinglist.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -55,20 +56,22 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
 
-//                // リストビューのチェック状態を確認し、チェックのあるものを削除
-//                ListView lv = view.findViewById(R.id.lvBuyList);
-//                List<Integer> checked_list = new ArrayList<>();
-//                int cnt = lv.getCount();
-//                for (int i = 0; i < cnt; i++) {
-//                    MyAdapter adapter = (MyAdapter) lv.getAdapter();
-//                    checked_list.add(i);
-//                    if (adapter.checkList.get(i)) {
-//                        list.remove(i);
-//                        cnt--;
-//                    }
-//                }
-//                // 更新
-//                adapter.notifyDataSetChanged();
+
+                // リストビューのチェック状態を確認し、チェックのあるものを削除
+                ListView lv = view.findViewById(R.id.lvBuyList);
+                List<Integer> checked_list = new ArrayList<>();
+                int cnt = lv.getCount();
+                for (int i = 0; i < cnt; i++) {
+                    MyAdapter adapter = (MyAdapter) lv.getAdapter();
+                    checked_list.add(i);
+                    if (adapter.checkList.get(i)) {
+                        list.remove(i);
+                        cnt--;
+                    }
+                }
+                // 更新
+                adapter.notifyDataSetChanged();
+
 
 
             }
