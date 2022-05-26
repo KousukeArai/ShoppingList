@@ -9,7 +9,7 @@ import java.util.Map;
 public class CursorToList {
     public static List makeList (Cursor cursor) {
 
-        List list =MainActivity.createList();
+        List dbList =MainActivity.createList();
 
 
         //データベースから取得した値を格納する変数の用意。データがなかった時のための初期値も用意
@@ -39,10 +39,10 @@ public class CursorToList {
 
             map.put("check", false);
 
-            list.add(map);
+            dbList.add(map);
 
 
         }
-        return list;
+        return dbList;
     }
 }

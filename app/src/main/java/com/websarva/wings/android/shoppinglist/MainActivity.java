@@ -78,6 +78,42 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = db.rawQuery(sql, null);
 
         _dbList = makeList(cursor);
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("title","NO.00001");
+        map.put("name","あいうえお");
+        map.put("check",false);
+        list.add(map);
+
+        map =  new HashMap<>();
+        map.put("title","NO.00002");
+        map.put("name","かきくけこ");
+        map.put("check",false);
+        list.add(map);
+
+        map =  new HashMap<>();
+        map.put("title","NO.00003");
+        map.put("name","さしすせそ");
+        map.put("check",false);
+        list.add(map);
+
+        map.put("title","NO.00004");
+        map.put("name","あいうえp");
+        map.put("check",false);
+        list.add(map);
+
+        map =  new HashMap<>();
+        map.put("title","NO.00005");
+        map.put("name","かきくけo");
+        map.put("check",false);
+        list.add(map);
+
+        map =  new HashMap<>();
+        map.put("title","NO.00006");
+        map.put("name","さしすせそ");
+        map.put("check",false);
+        list.add(map);
+
     }
 
     @Override
