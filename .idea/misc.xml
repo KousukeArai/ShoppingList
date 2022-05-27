@@ -15,6 +15,14 @@
         <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/layout/table.xml" value="0.20416666666666666" />
         <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Study/Androidstudio/ShoppingList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/layout/activity_main.xml" value="0.1641337386018237" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/layout/fragment_dashboard.xml" value="0.1641337386018237" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/layout/fragment_home.xml" value="0.1641337386018237" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/layout/list.xml" value="0.1641337386018237" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/layout/menulist.xml" value="0.1641337386018237" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/layout/table.xml" value="0.1641337386018237" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/menu/option_menu.xml" value="0.1859375" />
+        <entry key="..\:/Study/androidstudio2/app/src/main/res/menu/optionmenulist.xml" value="0.1859375" />
         <entry key="..\:/Users/rakuf/StudioProjects/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.22234762979683972" />
         <entry key="..\:/Users/rakuf/StudioProjects/ShoppingList/app/src/main/res/layout/fragment_dashboard.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/rakuf/StudioProjects/ShoppingList/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
@@ -24,7 +32,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>

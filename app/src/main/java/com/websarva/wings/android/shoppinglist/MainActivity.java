@@ -4,6 +4,8 @@ import static com.websarva.wings.android.shoppinglist.CursorToList.makeList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -127,6 +129,18 @@ public class MainActivity extends AppCompatActivity {
         return _dbList;
     }
 
+    //オプションメニューの追加
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+
+//メニューインフレーターの取得
+        MenuInflater inflater=getMenuInflater();
+        //オプションメニュー用.xmlファイルをインフレート
+        inflater.inflate(R.menu.option_menu,menu);
+        return true;
+    }
+
+    }
 
 
 /*
@@ -170,12 +184,12 @@ public class MainActivity extends AppCompatActivity {
 //        //データベースヘルパーオブジェクトからデータベース接続オブジェクトを取得
 //        SQLiteDatabase db = _helper.getWritableDatabase();
 //        //主キーによる検索SQL文字列の用意
-//        String sql = "SELECT name,unit FROM kaimonomemos WHERE _category = " + _kaimonoID;
+//        String sql ="SELECT * FROM ShoppingLists WHERE category";
 //        //SQL実行
 //        Cursor cursor = db.rawQuery(sql, null);
 //        //データベースから取得した値を格納する変数の用意。データがなかった時のための初期値も用意
-//        String name = "";
-//        String unit ="";
+//        CursorToList makeList
+//
 //        //SQL実行の戻り値であるカーソルオブジェクトをループさせてデータベース内のデータを取得
 //        while (cursor.moveToNext()) {
 //            //カラムのインデックス値を取得
@@ -262,5 +276,5 @@ public class MainActivity extends AppCompatActivity {
     //
 
  */
-}
+
 
