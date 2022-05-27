@@ -137,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater=getMenuInflater();
         //オプションメニュー用.xmlファイルをインフレート
         inflater.inflate(R.menu.option_menu,menu);
+
+
+
         return true;
     }
 
