@@ -23,5 +23,7 @@ tools:context=".ui.home.HomeFragment">
     android:text="@string/btn_end"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+    app:layout_constraintStart_toStartOf="parent"
+    android:drawableRight="@drawable/ic_baseline_shopping_cart_24"
+    android:drawableEnd="@drawable/ic_baseline_shopping_cart_24"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
