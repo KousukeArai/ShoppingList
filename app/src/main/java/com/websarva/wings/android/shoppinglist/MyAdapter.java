@@ -1,45 +1,55 @@
 package com.websarva.wings.android.shoppinglist;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 // カスタムアダプター
-public class MyAdapter extends  SimpleAdapter{
+public class MyAdapter extends ArrayAdapter<MyData> {
 
-    // 外部から呼び出し可能なマップ
-    public Map<Integer,Boolean> checkList = new HashMap<>();
+    private LayoutInflater mLayoutInflater;
 
-    public MyAdapter(Context context, List<? extends Map<String, ?>> data,
-                     int resource, String[] from, int[] to) {
-        super(context, data, resource, from, to);
-
-        // 初期値を設定する
-        for(int i=0; i<data.size();i++){
-            Map map = (Map)data.get(i);
-            checkList.put(i,(Boolean)map.get("check"));
-        }
+    public MyAdapter(Context context, int resourceId, List<MyData> objects) {
+        super(context, resourceId, objects);
+        // getLayoutInflater()メソッドはActivityじゃないと使えない
+        mLayoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
+    // getView()は各行を表示しようとした時に呼び出される
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        View view = super.getView(position, convertView, parent);
-        CheckBox ch = view.findViewById(R.id.cbBuyList);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // position のデータを取る
+        MyData item = (MyData)getItem(position);
+        // convertViewは使いまわされている可能性があるのでnullの時だけ新しく作る
+        if (null == convertView) convertView = mLayoutInflater.inflate(R.layout.list, null);
 
-        // チェックの状態が変化した場合はマップに記憶する
-        ch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        // MyDataのデータをViewの各ウィジェットにセットする
+        TextView textView = convertView.findViewById(R.id.textView);
+        textView.setText(item.get_textName());
+        TextView textView2 = convertView.findViewById(R.id.textView2);
+        textView2.setText(item.get_unit());
+        CheckBox checkBox = convertView.findViewById(R.id.cbBuyList);
+        checkBox.setOnCheckedChangeListener(null);
+        checkBox.setChecked(item.isChecked());
+
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                checkList.put(position,isChecked);
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                MyData MyData = getItem(position);
+                MyData.setChecked(b);
             }
         });
-        return view;
+
+        return convertView;
     }
 }

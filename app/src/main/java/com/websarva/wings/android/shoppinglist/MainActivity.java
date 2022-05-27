@@ -22,11 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    //
-    //
-    // -----水谷追加分1開始-----
-    //
-    //
+
     //選択されたアイテムの主キーIDを表すフィールド
     private int _kaimonoID = -1;
 
@@ -40,15 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     //データベースの情報を格納するリスト
     private static List<Map<String,String>> _dbList = new ArrayList<>();
-
-    //
-    //
-    // -----水谷追加分1終了-----
-    //
-    //
+    //買い物リストを格納するリスト
+    public static List<Map<String, Object>> buyList = new ArrayList<>();
 
     private ActivityMainBinding binding;
-    public static List<Map<String, Object>> list = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,36 +75,36 @@ public class MainActivity extends AppCompatActivity {
         map.put("title","NO.00001");
         map.put("name","あいうえお");
         map.put("check",false);
-        list.add(map);
+        buyList.add(map);
 
         map =  new HashMap<>();
         map.put("title","NO.00002");
         map.put("name","かきくけこ");
         map.put("check",false);
-        list.add(map);
+        buyList.add(map);
 
         map =  new HashMap<>();
         map.put("title","NO.00003");
         map.put("name","さしすせそ");
         map.put("check",false);
-        list.add(map);
+        buyList.add(map);
 
         map.put("title","NO.00004");
         map.put("name","あいうえp");
         map.put("check",false);
-        list.add(map);
+        buyList.add(map);
 
         map =  new HashMap<>();
         map.put("title","NO.00005");
         map.put("name","かきくけo");
         map.put("check",false);
-        list.add(map);
+        buyList.add(map);
 
         map =  new HashMap<>();
         map.put("title","NO.00006");
         map.put("name","さしすせそ");
         map.put("check",false);
-        list.add(map);
+        buyList.add(map);
 
     }
 
